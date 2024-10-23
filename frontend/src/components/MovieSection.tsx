@@ -1,11 +1,12 @@
+
 import React from "react";
 
-interface Props{
+interface Props {
   title: string;
-  children:React.ReactNode
+  children: React.ReactNode;
 }
 
-const MovieSection = ({title,children}:Props) => {
+const MovieSection: React.FC<Props> = ({ title, children }: Props) => {
   return (
     <section className="border-2 border-black p-2">
       <div className="border border-red-500 p-2 my-2">

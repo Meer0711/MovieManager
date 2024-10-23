@@ -1,25 +1,25 @@
 import ActorSelector from "../components/ActorSelector";
 import CategoriesSelector from "../components/CategoriesSelector";
-import MetadataSection from "../components/MetadataEditor";
+import MovieData from "../components/MovieData";
 import MovieList from "../components/MovieList";
 
 const MainPage = () => {
     return (
       <>
-        <div className="flex">
-          <div className="my-2 w-3/5">
+        <div className="lg:flex">
+          <div className="m-2 lg:w-3/5">
           <MovieList />
           </div>
-                <div className="my-2 w-2/5">
-                <MetadataSection />
+                <div className="m-2 lg:w-2/5">
+                <MovieData />
                 </div>
         </div>
   
-        <div className="flex">
-                <div className="my-2 w-1/2">
+        <div className="lg:flex">
+                <div className="m-2 lg:w-1/2">
                 <ActorSelector />
                 </div>
-                <div className="my-2 w-1/2">
+                <div className="m-2 lg:w-1/2">
                 <CategoriesSelector />
                 </div>
         </div>
