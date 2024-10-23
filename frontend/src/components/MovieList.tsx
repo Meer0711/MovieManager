@@ -1,31 +1,23 @@
 
+import { useContext } from "react";
 import MovieSection from "./MovieSection"
+import StateContext from "../states/StateContext";
+import { MovieSectionProps } from "../types/form";
 
-const MovieList = () => {
+
+
+const MovieList = ({formik}:MovieSectionProps) => {
+    const { state } = useContext(StateContext);
     return (
         <MovieSection title="Movie List">
-            <select className="w-full h-64" size={10}>
-                <option>Movie 1</option>
-                <option>Movie 2</option>
-                <option>Movie 3</option>
-                <option>Movie 4</option>
-                <option>Movie 5</option>
-                <option>Movie 6</option>
-                <option>Movie 7</option>
-                <option>Movie 8</option>
-                <option>Movie 9</option>
-                <option>Movie 0</option>
-                <option>Movie 1</option>
-                <option>Movie 2</option>
-                <option>Movie 3</option>
-                <option>Movie 4</option>
-                <option>Movie 5</option>
-                <option>Movie 6</option>
-                <option>Movie 7</option>
-                <option>Movie 8</option>
+            <select className="h-64 w-full" size={10}
+            {...formik.getFieldProps("movieId")}
+            >
+             {state?.movies.map((movie, index) => (
+                 <option key={index} value={index}>{movie}</option>
+                ))}
             </select>
         </MovieSection>
     );
 };
-
 export default MovieList
